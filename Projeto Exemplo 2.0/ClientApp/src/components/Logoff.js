@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 import { Redirect } from 'react-router';
-import cookie from 'react-cookies';
+import cookie from 'react-cookie';
 
 
 export default function Logoff() {

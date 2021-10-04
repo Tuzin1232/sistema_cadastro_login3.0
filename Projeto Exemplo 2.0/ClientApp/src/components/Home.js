@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import columns from './RepositorioSistemas';
-import { useCookies } from 'react-cookies';
+import { useCookies } from 'react-cookie';
 import './home.css';
 
 
@@ -121,7 +121,7 @@ export function Home() {
                     <div className="divText">
                         <label for="codigo">Código</label>
                         <br />
-                        <input type="text" className="codigo" id="codigo" />
+                        <input value={codigoCliente} type="text" className="codigo" id="codigo" />
                     </div>
                     <div className="divCheckBox">
                         <label for="podeAvaliar">Pode Avaliar</label>

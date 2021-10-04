@@ -1,7 +1,7 @@
 ﻿import React, { useState } from 'react';
 import { Redirect, Router } from 'react-router';
 import { Link } from 'react-router-dom';
-import { useCookies } from 'react-cookies';
+import { useCookies } from 'react-cookie';
 import './login.css'
 
 

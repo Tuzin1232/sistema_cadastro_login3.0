@@ -1,24 +1,23 @@
-﻿import React, { useState } from 'react';
-
+﻿import React from 'react';
 
 export default function Cadastro(props) {
 
-    const [nomeUsuario, setNomeUsuario] = useState("");
-    const [senha, setSenha] = useState("");
+    function cadastrar() {
+        let senha = document.getElementById('senha').value
+        let nomeVar = document.getElementById('nome').value
 
-    if (typeof nomeUsuario.foo !== 'undefined' && senha.foo !== 'undefined') {
-        var cadastrar = () => {
-
-            alert('cadastrando: ' + nomeUsuario + " " + senha);
+        if (nomeVar !== '' && senha !== '') {
+            alert('cadastrando: ' + nomeVar + " " + senha);
             const requestOptions = {
 
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    nome: nomeUsuario,
+                    nome: nomeVar,
                     senha: senha,
                 })
             };
+
             fetch('api/account/cadastrar', requestOptions).then((response) => {
 
                 if (response.ok) {
@@ -26,29 +25,27 @@ export default function Cadastro(props) {
                 } else {
                     response.text().then(r => alert(r));
                 }
-
             });
 
+        } else {
+            window.alert("Preencha todos os campos!")
         }
-    } else {
-        window.alert("Preencha todos os campos!")
     }
-
 
     return (
         <div className="cadastro">
             <form id="form1" runat="server" className="form">
                 <label>
                     Nome:
-                <input style={{ marginLeft: '1em' }} type="text" name="nome" value={nomeUsuario} onChange={(e) => setNomeUsuario(e.target.value)} /><br />
+                <input style={{ marginLeft: '1em' }} id="nome" type="text" name="nome" /><br />
                 </label>
                 <br />
                 <label>
                     Senha:
-                <input style={{ marginLeft: '1em' }} type="password" name="senha" value={senha} onChange={(e) => setSenha(e.target.value)} /><br />
+                <input style={{ marginLeft: '1em' }} id="senha" type="password" name="senha" /><br />
                 </label>
                 <br />
-                <button className="btn btn-success" style={{ marginLeft: '4em' }} type="button" onClick={cadastrar}>Cadastrar</button>
+                <button className="btn btn-success" style={{ marginLeft: '2em' }} type="button" onClick={cadastrar}>Cadastrar</button>
 
             </form>
         </div>

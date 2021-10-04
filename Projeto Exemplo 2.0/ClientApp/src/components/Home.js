@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import columns from './RepositorioSistemas';
-import { useCookies } from 'react-cookie';
-import './home.css'
+import { useCookies } from 'react-cookies';
+import './home.css';
 
 
 export function Home() {
@@ -288,7 +288,7 @@ export function Home() {
                         <button type="button" id="remover" className="btn btn-warning" style={{ marginLeft: '1em' }}>Remover selecionados</button>
                         <br />
                         <br />
-                        <button type="submit" id="salvar" className="btn btn-success">Salvar</button>
+                        <button type="submit" id="salvar" className="btn btn-success" onClick={salvarCliente}>Salvar</button>
                     </div>
                 </div>
             </form>

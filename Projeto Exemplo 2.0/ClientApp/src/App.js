@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router';
 import { Layout } from './components/Layout';
 import Home from './components/Home';
-import './custom.css'
+import './custom.css';
 import TokenProvider from './components/TokenContext';
 import Login from './components/Login';
 import Logoff from './components/Logoff';

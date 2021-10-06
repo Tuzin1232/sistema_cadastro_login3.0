@@ -2,9 +2,6 @@
 import { Redirect, Router } from 'react-router';
 import { Link } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
-import './login.css'
-
-
 
 export default function Login(props) {
     const [cookies, setCookie] = useCookies(['access_token'])
@@ -70,7 +67,7 @@ export default function Login(props) {
                 <input style={{ marginLeft: '1em' }} type="password" name="senha" value={senha} onChange={(e) => setSenha(e.target.value)} /><br />
             </label>
             <br />
-            <button className="btn btn-success" style={{ marginLeft: '4em' }} type="submit" >Entrar</button>
+            <button className="btn btn-success" style={{ marginLeft: '2em' }} type="submit" >Entrar</button>
             <Link className="btn btn-info" style={{ marginLeft: '2em' }} to="/cadastrar">Cadastro</Link>
         </form>
     );

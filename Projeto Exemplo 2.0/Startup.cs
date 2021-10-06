@@ -13,7 +13,7 @@ using Projeto_Exemplo_2._0;
 using Projeto_Exemplo_2._0.Services;
 using System.Text;
 
-namespace ProjetoExemplo
+namespace ProjetoExemplo_2._0.services
 {
     public class Startup
     {
@@ -71,7 +71,7 @@ namespace ProjetoExemplo
 
             var connection = Configuration["ConexaoMySql:MySqlConnectionString"];
             services.AddDbContext<AppDatabase>(options =>
-                options.UseMySQL(connection));
+            options.UseMySQL(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

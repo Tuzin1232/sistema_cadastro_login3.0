@@ -19,7 +19,7 @@ export default function Cadastro(props) {
                     senha: senha,
                 })
             };
-            fetch('api/account/cadastrar', requestOptions).then((response) => {
+            fetch('api/account/alterar', requestOptions).then((response) => {
 
                 if (response.ok) {
                     response.text().then(r => alert(r));

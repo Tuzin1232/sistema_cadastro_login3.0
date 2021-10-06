@@ -39,7 +39,7 @@ export class NavMenu extends Component {
                                 </NavItem>
                                 <br />
                                 <NavItem>
-                                    <NavLink tag={Link} style={{ color: 'white', width: '60px' }} className="btn btn-danger" to="/sair">Sair</NavLink>
+                                    <NavLink tag={Link} style={{ color: 'white', width: '60px' }} className="btn btn-danger" to="/login">Sair</NavLink>
                                 </NavItem>
                             </ul>
                         </Collapse>

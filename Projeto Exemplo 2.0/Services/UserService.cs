@@ -10,7 +10,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoExemplo.Services
+namespace Projeto_Exemplo_2._0.Services
 {
     public class UserService
     {

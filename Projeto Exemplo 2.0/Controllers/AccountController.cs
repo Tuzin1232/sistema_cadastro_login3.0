@@ -2,13 +2,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Projeto_Exemplo_2._0;
 using Projeto_Exemplo_2._0.Model;
-using ProjetoExemplo.Services;
+using Projeto_Exemplo_2._0.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProjetoExemplo.Controllers
+namespace ProjetoExemplo_2._0.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProjetoExemplo.Controllers
+namespace ProjetoExemplo_2._0.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

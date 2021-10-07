@@ -5,6 +5,7 @@ using Projeto_Exemplo_2._0.Model;
 using Projeto_Exemplo_2._0.Services;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -110,11 +111,9 @@ namespace ProjetoExemplo_2._0.Controllers
                 var usuarioExistente = _Context.Usuarios.Where(u => u.nome.ToUpper() == model.nome.ToUpper()).FirstOrDefault();
                 if (usuarioExistente != null)
                 {
-                    usuarioExistente = model;
-
                     _Context.Remove(usuarioExistente);
-
-                    return Ok("Usuário excluído com sucesso");
+                    _Context.SaveChanges();
+                    return Ok("Usuário excluído com sucesso. Redirecionando para a tela de cadastro");
                 }
                 else
                 {

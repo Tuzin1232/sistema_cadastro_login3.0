@@ -7,7 +7,7 @@ import TokenProvider from './components/TokenContext';
 import Login from './components/Login';
 import Logoff from './components/Logoff';
 import Cadastro from './components/Cadastro';
-import Alterar from './components/Conta';
+import Conta from './components/Conta';
 
 export default class App extends Component {
     static displayName = App.name;
@@ -17,7 +17,7 @@ export default class App extends Component {
             <Switch>
                 <Route path='/login' component={Login} />
                 <Route path="/cadastrar" component={Cadastro} />
-                <Route path="/alterar" component={Alterar} />
+                <Route path="/conta" component={Conta} />
                 <TokenProvider>
                     <Layout>
                         <Route exact path='/' component={Home} />

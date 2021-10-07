@@ -35,6 +35,7 @@
     <None Remove="ClientApp\src\components\login.css" />
     <None Remove="ClientApp\src\components\StyleSwitch.css" />
     <None Remove="ClientApp\src\components\switchStyle.css" />
+    <None Remove="ClientApp\src\custom.css" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

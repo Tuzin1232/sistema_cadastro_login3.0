@@ -29,17 +29,17 @@ export class NavMenu extends Component {
                         <NavbarBrand tag={Link} style={{ color: 'white' }} to="/">Sistema de Cadastro</NavbarBrand>
                         <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
                         <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
-                            <ul className="navbar-nav flex-grow">
+                            <ul className="navbar-nav flex-grow" style={{gap: '10px'}}>
                                 <NavItem>
-                                    <NavLink tag={Link} style={{ color: 'white', width: '60px' }} className="btn btn-primary" to="/">Home</NavLink>
+                                    <NavLink tag={Link} style={{ color: 'white', width: '5em' }} className="btn btn-primary" to="/">Home</NavLink>
                                 </NavItem>
                                 <br />
                                 <NavItem>
-                                    <NavLink tag={Link} style={{ color: 'white', width: '130px' }} className="btn btn-warning" to="/conta">Conta</NavLink>
+                                    <NavLink tag={Link} style={{ color: 'white', width: '5em' }} className="btn btn-warning" to="/conta">Conta</NavLink>
                                 </NavItem>
                                 <br />
                                 <NavItem>
-                                    <NavLink tag={Link} style={{ color: 'white', width: '60px' }} className="btn btn-danger" to="/login">Sair</NavLink>
+                                    <NavLink tag={Link} style={{ color: 'white', width: '5em' }} className="btn btn-danger" to="/login">Sair</NavLink>
                                 </NavItem>
                             </ul>
                         </Collapse>

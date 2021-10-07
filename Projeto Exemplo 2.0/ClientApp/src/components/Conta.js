@@ -1,6 +1,8 @@
 ﻿import React from 'react';
+import { Redirect } from 'react-router-dom';
 
-export default function Alterar(props) {
+
+export default function Conta(props) {
 
     function alterar() {
         let senha = document.getElementById('senha').value
@@ -47,8 +49,6 @@ export default function Alterar(props) {
                         senha: senha,
                     })
                 };
-                return <Redirect push to="/login" />;
-                window.alert('Conta excluia com sucesso')
 
                 fetch('api/account/excluir', requestOptions).then((response) => {
 
@@ -58,28 +58,32 @@ export default function Alterar(props) {
                         response.text().then(r => alert(r));
                     }
                 });
+                window.location.href = "/cadastrar";
             }
+        } else {
+            alert("Preencha todos os campos")
         }
+
     }
-
-
     return (
         <div className="alteracao">
             <form id="form1" runat="server" className="form">
                 <label>
                     Nome:
-                <input style={{ marginLeft: '1em' }} id="nome" type="text" name="nome" /><br />
+                <input id="nome" type="text" name="nome" /><br />
                 </label>
                 <br />
                 <label>
-                    Novo Senha:
-                <input style={{ marginLeft: '1em' }} id="senha" type="password" name="senha" /><br />
+                    Nova Senha:
+                <input id="senha" type="password" name="senha" /><br />
                 </label>
                 <br />
-                <button className="btn btn-success" style={{ marginLeft: '4em' }} type="button" onClick={alterar}>Alterar</button>
-                <button className="brn brn-danger" style={{ marginLeft: '2em' }} type="button" onClick={excluir}>Excluir Conta</button>
-
+                <button className="btn btn-success" type="button" onClick={alterar}>Alterar</button>
+                <button className="btn btn-danger" style={{ marginLeft: '2em' }} type="button" onClick={excluir}>Excluir conta</button>
             </form>
         </div>
     )
 }
+
+
+

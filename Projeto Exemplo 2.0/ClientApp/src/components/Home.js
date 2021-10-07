@@ -50,7 +50,7 @@ export function Home() {
         });
     }
 
-    const handleChange = e => setValor(e.target.value);
+    const handleChange = e => setValor(e.target.onSubmit);
 
     console.log(sistemas)
 
@@ -58,7 +58,7 @@ export function Home() {
         let infoSistema = {
             id: sistemas.length + 1,
             ativo: document.getElementById("ativo").checked ? "Sim" : "Não",
-            sistema: tabelaValor.valor,
+            sistema: tabelaValor.value,
             data_inicio: document.getElementById("data_inicio").value,
             data_fim: document.getElementById("data_fim").value,
             valor: document.getElementById("valor").value
@@ -119,93 +119,93 @@ export function Home() {
                 <div className="div" id="infoContrato">
                     <h2>Informações do contrato</h2>
                     <div className="divText">
-                        <label for="codigo">Código</label>
+                        <label htmlFor="codigo">Código</label>
                         <br />
-                        <input value={setCodigoCliente} type="text" className="codigo" id="codigo" />
+                        <input type="text" className="codigo" id="codigo" />
                     </div>
                     <div className="divCheckBox">
-                        <label for="podeAvaliar">Pode Avaliar</label>
-                        <input type="checkbox" id="avaliacao" value={setAvaliacao}/>
+                        <label htmlFor="podeAvaliar">Pode Avaliar</label>
+                        <input type="checkbox" id="avaliacao" defaultChecked={false} />
                     </div>
                     <div className="divSelect">
-                        <label for="tipo">Tipo</label>
+                        <label htmlFor="tipo">Tipo</label>
                         <select style={{ marginLeft: '1em' }} id="tipo" className="tipo">
-                            <option value={1}>1</option>
-                            <option value={2}>2</option>
-                            <option value={3}>3</option>
-                            <option value={4}>4</option>
-                            <option value={5}>5</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
                         </select>
                     </div>
                     <div className="divCheckBox">
-                        <label for="pendFinanceira">Pendência Financeira</label>
-                        <input type="checkbox" id="pend_financeira" value={setPendFinanceira} />
+                        <label htmlFor="pendFinanceira">Pendência Financeira</label>
+                        <input type="checkbox" id="pend_financeira" defaultChecked={false} />
                     </div>
                     <div className="divText">
-                        <label for="mesAtraso">Meses em atraso</label>
-                        <input type="text" className="mesAtraso" id="mesAtraso" value={setMesAtraso} />
+                        <label htmlFor="mesAtraso">Meses em atraso</label>
+                        <input type="text" className="mesAtraso" id="mesAtraso" />
                     </div>
                     <div className="divCheckBox">
-                        <label for="contratoAtivo">Contrato Ativo</label>
-                        <input type="checkbox" id="contratoAtivo" value={setContratoAtivo }/>
+                        <label htmlFor="contratoAtivo">Contrato Ativo</label>
+                        <input type="checkbox" id="contratoAtivo" defaultChecked={false} />
                     </div>
                 </div>
                 <br />
                 <div className="div" id="infoCliente">
                     <h2>Informações do Cliente</h2>
                     <div className="divText">
-                        <label for="nome">Nome</label>
-                        <input type="text" className="nome" id="nome" value={setNome } />
+                        <label htmlFor="nome">Nome</label>
+                        <input type="text" className="nome" id="nome" />
                     </div>
                     <div className="divNumber">
-                        <label for="cnpj">CNPJ</label>
-                        <input type="number" className="cnpj" id="cnpj" value={setCnpj}/>
+                        <label htmlFor="cnpj">CNPJ</label>
+                        <input type="number" className="cnpj" id="cnpj" />
                     </div>
                     <div className="divNumber">
-                        <label for="cpf">CPF</label>
-                        <input type="number" className="cpf" id="cpf" value={setCpf} />
+                        <label htmlFor="cpf">CPF</label>
+                        <input type="number" className="cpf" id="cpf" />
                     </div>
                     <div className="divNumber">
-                        <label for="tel">Telefone</label>
-                        <input type="number" className="tel" id="tel" value={setTelefone} />
+                        <label htmlFor="tel">Telefone</label>
+                        <input type="number" className="tel" id="tel" />
                     </div>
                     <div className="divNumber">
-                        <label for="cel">Celular</label>
-                        <input type="number" className="cel" id="cel" value={setCelular} />
+                        <label htmlFor="cel">Celular</label>
+                        <input type="number" className="cel" id="cel" />
                     </div>
                     <div className="divText">
-                        <label for="contato">Contato</label>
-                        <input type="email" className="contato" id="contato" value={setContato} />
+                        <label htmlFor="contato">Contato</label>
+                        <input type="email" className="contato" id="contato" />
                     </div>
                     <div className="divSelect">
-                        <label for="ramo">Ramo de Atividade</label>
+                        <label htmlFor="ramo">Ramo de Atividade</label>
                         <select style={{ marginLeft: '1em' }} id="ramo" className="ramo">
-                            <option value={1}>1</option>
-                            <option value={2}>2</option>
-                            <option value={3}>3</option>
-                            <option value={4}>4</option>
-                            <option value={5}>5</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
                         </select>
                     </div>
                     <div className="divText">
-                        <label for="cidade">Cidade</label>
-                        <input type="text" className="cidade" id="cidade" value={setCidade} />
+                        <label htmlFor="cidade">Cidade</label>
+                        <input type="text" className="cidade" id="cidade" />
                     </div>
                     <div className="divText">
-                        <label for="rua">Rua</label>
-                        <input type="text" className="rua" id="rua" value={setRua} />
+                        <label htmlFor="rua">Rua</label>
+                        <input type="text" className="rua" id="rua" />
                     </div>
                     <div className="divText">
-                        <label for="bairro">Bairro</label>
-                        <input type="text" className="bairro" id="bairro" value={setBairro} />
+                        <label htmlFor="bairro">Bairro</label>
+                        <input type="text" className="bairro" id="bairro" />
                     </div>
                     <div className="divNumber">
-                        <label for="numero">Número</label>
-                        <input type="number" className="numero" id="numero" value={setNumero} />
+                        <label htmlFor="numero">Número</label>
+                        <input type="number" className="numero" id="numero" />
                     </div>
                     <div className="divSelect">
-                        <label for="uf">UF</label>
-                        <select style={{ marginLeft: '1em' }} id="uf" className="uf" value={setUF}>
+                        <label htmlFor="uf">UF</label>
+                        <select style={{ marginLeft: '1em' }} id="uf" className="uf" >
                             <option>AC</option>
                             <option>AL</option>
                             <option>AP</option>
@@ -236,24 +236,23 @@ export function Home() {
                         </select>
                     </div>
                     <div className="divNumber">
-                        <label for="cep">CEP</label>
-                        <input type="number" className="cep" id="cep" value={setCep}/>
+                        <label htmlFor="cep">CEP</label>
+                        <input type="number" className="cep" id="cep" />
                     </div>
                     <div className="divText">
-                        <label for="complemento">Complemento</label>
-                        <input type="text" className="complemento" id="complemento" value={setComplemento}/>
+                        <label htmlFor="complemento">Complemento</label>
+                        <input type="text" className="complemento" id="complemento" />
                     </div>
                 </div>
                 <br />
                 <div className="div" id="infoSistema">
                     <div className="divCheckBox">
-                        <label for="ativo">Ativo</label>
-                        <input type="radio" value="sim" name="AEscolha" /> Sim
-                        <input type="radio" value="nao" name="AEscolha" /> Não
+                        <label htmlFor="ativo">Ativo</label>
+                        <input type="checkbox" id="ativo" defaultChecked={false} />
                     </div>
                     <div className="divSelect">
-                        <label for="sistema">Sistema</label>
-                        <select style={{ marginLeft: '1em' }} id="sistema" className="sistema" value={setSistemas}>
+                        <label htmlFor="sistema">Sistema</label>
+                        <select style={{ marginLeft: '1em' }} id="sistema" className="sistema" >
                             <option value={"Assistência Social"}>Assistência Social</option>
                             <option value={"CRM"}>CRM</option>
                             <option value={"Educação"}>Educação</option>
@@ -268,20 +267,20 @@ export function Home() {
                         </select>
                     </div>
                     <div className="divNumber">
-                        <label for="valor">Valor</label>
-                        <input type="number" className="valor" id="valor" value={setValor} />
+                        <label htmlFor="valor">Valor</label>
+                        <input type="number" className="valor" id="valor" />
                     </div>
                     <div className="divText">
-                        <label for="dataInicio">Data de Inicio</label>
+                        <label htmlFor="dataInicio">Data de Inicio</label>
                         <input type="text" className="dataInicio" id="dataInicio" />
                     </div>
                     <div className="divText">
-                        <label for="dataFim">Data de Término</label>
+                        <label htmlFor="dataFim">Data de Término</label>
                         <input type="text" className="dataFim" id="dataFim" />
                     </div>
                     <br />
                     <div className="infoSistemasAdd">
-                        <button type="button" id="add" className="btn btn-primary" >Adicionar</button>
+                        <button type="button" id="add" className="btn btn-primary" onClick={getValores} >Adicionar</button>
                         <button type="button" id="remover" className="btn btn-warning" style={{ marginLeft: '1em' }}>Remover selecionados</button>
                         <br />
                         <br />

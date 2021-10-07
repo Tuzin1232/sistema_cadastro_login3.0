@@ -7,7 +7,7 @@ export default function Cadastro(props) {
         let nomeVar = document.getElementById('nome').value
 
         if (nomeVar !== '' && senha !== '') {
-            alert('cadastrando: ' + nomeVar + " " + senha);
+            alert('Cadastrando: ' + nomeVar + " " + senha);
             const requestOptions = {
 
                 method: 'POST',

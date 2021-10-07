@@ -74,6 +74,58 @@ namespace ProjetoExemplo_2._0.Controllers
             }
 
         }
+        [HttpPut("alterar")]
+        [AllowAnonymous]
+        public IActionResult Alterar([FromBody] Usuario model)
+        {
+            try
+            {
+                var usuarioExistente = _Context.Usuarios.Where(u => u.nome.ToUpper() == model.nome.ToUpper()).FirstOrDefault();
+                if (usuarioExistente != null)
+                {
+               
+                    usuarioExistente.senha = model.senha;
+
+                    _Context.SaveChanges();
+
+                    return Ok("Usuário alterado com sucesso");
+                }
+                else
+                {
+                    return BadRequest("Usuário não encontrado");
+                }
+            }
+            catch(Exception ex)
+            {
+                return BadRequest("Falha ao alterar sua conta: " + ex.Message);
+            }
+        }
+        
+        [HttpDelete("excluir")]
+        [AllowAnonymous]
+        public IActionResult Excluir([FromBody] Usuario model)
+        {
+            try
+            {
+                var usuarioExistente = _Context.Usuarios.Where(u => u.nome.ToUpper() == model.nome.ToUpper()).FirstOrDefault();
+                if (usuarioExistente != null)
+                {
+                    usuarioExistente = model;
+
+                    _Context.Remove(usuarioExistente);
+
+                    return Ok("Usuário excluído com sucesso");
+                }
+                else
+                {
+                    return BadRequest("Falha ao excluir sua conta");
+                }
+            }
+            catch(Exception ex)
+            {
+                return BadRequest("Falha ao excluir sua conta: " + ex.Message);
+            }
+        }
     }
 
 }

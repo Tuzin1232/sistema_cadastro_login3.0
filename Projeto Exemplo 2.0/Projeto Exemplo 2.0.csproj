@@ -31,6 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\components\ExcluirConta.js" />
     <None Remove="ClientApp\src\components\login.css" />
     <None Remove="ClientApp\src\components\StyleSwitch.css" />
     <None Remove="ClientApp\src\components\switchStyle.css" />

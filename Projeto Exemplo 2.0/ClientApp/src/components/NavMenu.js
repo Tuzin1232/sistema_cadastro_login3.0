@@ -35,7 +35,7 @@ export class NavMenu extends Component {
                                 </NavItem>
                                 <br />
                                 <NavItem>
-                                    <NavLink tag={Link} style={{ color: 'white', width: '130px' }} className="btn btn-warning" to="/alterar">Alterar Conta</NavLink>
+                                    <NavLink tag={Link} style={{ color: 'white', width: '130px' }} className="btn btn-warning" to="/conta">Conta</NavLink>
                                 </NavItem>
                                 <br />
                                 <NavItem>

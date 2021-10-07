@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import columns from './RepositorioSistemas';
 import { useCookies } from 'react-cookie';
 import './home.css';
+import Conta from './Conta';
 
 
 export function Home() {
@@ -76,11 +77,11 @@ export function Home() {
             },
             body: JSON.stringify({
                 id: id,
-                avaliacao: true,
+                avaliacao: avaliacao,
                 tipo: tipo,
-                pend_financeira: true,
+                pend_financeira: pendFinanceira,
                 mes_atraso: Number(mesAtraso),
-                contrato_ativo: true,
+                contrato_ativo: contratoAtivo,
                 nome: nome,
                 cpnj: cnpj,
                 cpf: cpf,
@@ -98,7 +99,9 @@ export function Home() {
                 ip_acesso: ipAcesso,
                 obv: obv,
                 ativo: true,
-                codigo_cliente: Number(codigoCliente)
+                codigo_cliente: Number(codigoCliente),
+                data_fim: dataFim,
+                data_inicio: dataInicio,
             })
         };
 
@@ -121,11 +124,11 @@ export function Home() {
                     <div className="divText">
                         <label htmlFor="codigo">Código</label>
                         <br />
-                        <input type="text" className="codigo" id="codigo" />
+                        <input type="text" className="codigo" id="codigo" value={id} />
                     </div>
                     <div className="divCheckBox">
                         <label htmlFor="podeAvaliar">Pode Avaliar</label>
-                        <input type="checkbox" id="avaliacao" defaultChecked={false} />
+                        <input type="checkbox" id="avaliacao" defaultChecked={false} value={avaliacao} />
                     </div>
                     <div className="divSelect">
                         <label htmlFor="tipo">Tipo</label>
@@ -139,15 +142,15 @@ export function Home() {
                     </div>
                     <div className="divCheckBox">
                         <label htmlFor="pendFinanceira">Pendência Financeira</label>
-                        <input type="checkbox" id="pend_financeira" defaultChecked={false} />
+                        <input type="checkbox" id="pend_financeira" defaultChecked={false} value={pendFinanceira} />
                     </div>
                     <div className="divText">
                         <label htmlFor="mesAtraso">Meses em atraso</label>
-                        <input type="text" className="mesAtraso" id="mesAtraso" />
+                        <input type="text" className="mesAtraso" id="mesAtraso" value={mesAtraso} />
                     </div>
                     <div className="divCheckBox">
                         <label htmlFor="contratoAtivo">Contrato Ativo</label>
-                        <input type="checkbox" id="contratoAtivo" defaultChecked={false} />
+                        <input type="checkbox" id="contratoAtivo" defaultChecked={false} value={contratoAtivo} />
                     </div>
                 </div>
                 <br />
@@ -155,27 +158,27 @@ export function Home() {
                     <h2>Informações do Cliente</h2>
                     <div className="divText">
                         <label htmlFor="nome">Nome</label>
-                        <input type="text" className="nome" id="nome" />
+                        <input type="text" className="nome" id="nome" value={nome} />
                     </div>
                     <div className="divNumber">
                         <label htmlFor="cnpj">CNPJ</label>
-                        <input type="number" className="cnpj" id="cnpj" />
+                        <input type="number" className="cnpj" id="cnpj" value={cnpj} />
                     </div>
                     <div className="divNumber">
                         <label htmlFor="cpf">CPF</label>
-                        <input type="number" className="cpf" id="cpf" />
+                        <input type="number" className="cpf" id="cpf" value={cpf} />
                     </div>
                     <div className="divNumber">
                         <label htmlFor="tel">Telefone</label>
-                        <input type="number" className="tel" id="tel" />
+                        <input type="number" className="tel" id="tel" value={cpf} />
                     </div>
                     <div className="divNumber">
                         <label htmlFor="cel">Celular</label>
-                        <input type="number" className="cel" id="cel" />
+                        <input type="number" className="cel" id="cel" value={celular} />
                     </div>
                     <div className="divText">
                         <label htmlFor="contato">Contato</label>
-                        <input type="email" className="contato" id="contato" />
+                        <input type="email" className="contato" id="contato" value={contato} />
                     </div>
                     <div className="divSelect">
                         <label htmlFor="ramo">Ramo de Atividade</label>
@@ -189,19 +192,19 @@ export function Home() {
                     </div>
                     <div className="divText">
                         <label htmlFor="cidade">Cidade</label>
-                        <input type="text" className="cidade" id="cidade" />
+                        <input type="text" className="cidade" id="cidade" value={cidade}/>
                     </div>
                     <div className="divText">
                         <label htmlFor="rua">Rua</label>
-                        <input type="text" className="rua" id="rua" />
+                        <input type="text" className="rua" id="rua" value={rua}/>
                     </div>
                     <div className="divText">
                         <label htmlFor="bairro">Bairro</label>
-                        <input type="text" className="bairro" id="bairro" />
+                        <input type="text" className="bairro" id="bairro" value={bairro} />
                     </div>
                     <div className="divNumber">
                         <label htmlFor="numero">Número</label>
-                        <input type="number" className="numero" id="numero" />
+                        <input type="number" className="numero" id="numero" value={numero} />
                     </div>
                     <div className="divSelect">
                         <label htmlFor="uf">UF</label>
@@ -237,18 +240,18 @@ export function Home() {
                     </div>
                     <div className="divNumber">
                         <label htmlFor="cep">CEP</label>
-                        <input type="number" className="cep" id="cep" />
+                        <input type="number" className="cep" id="cep" value={cep} />
                     </div>
                     <div className="divText">
                         <label htmlFor="complemento">Complemento</label>
-                        <input type="text" className="complemento" id="complemento" />
+                        <input type="text" className="complemento" id="complemento" value={complemento} />
                     </div>
                 </div>
                 <br />
                 <div className="div" id="infoSistema">
                     <div className="divCheckBox">
                         <label htmlFor="ativo">Ativo</label>
-                        <input type="checkbox" id="ativo" defaultChecked={false} />
+                        <input type="checkbox" id="ativo" defaultChecked={false} value={ativo} />
                     </div>
                     <div className="divSelect">
                         <label htmlFor="sistema">Sistema</label>
@@ -268,15 +271,15 @@ export function Home() {
                     </div>
                     <div className="divNumber">
                         <label htmlFor="valor">Valor</label>
-                        <input type="number" className="valor" id="valor" />
+                        <input type="number" className="valor" id="valor" value={valor} />
                     </div>
                     <div className="divText">
                         <label htmlFor="dataInicio">Data de Inicio</label>
-                        <input type="text" className="dataInicio" id="dataInicio" />
+                        <input type="text" className="dataInicio" id="dataInicio" value={dataInicio} />
                     </div>
                     <div className="divText">
                         <label htmlFor="dataFim">Data de Término</label>
-                        <input type="text" className="dataFim" id="dataFim" />
+                        <input type="text" className="dataFim" id="dataFim" value={dataFim}/>
                     </div>
                     <br />
                     <div className="infoSistemasAdd">

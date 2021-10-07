@@ -7,7 +7,7 @@ import TokenProvider from './components/TokenContext';
 import Login from './components/Login';
 import Logoff from './components/Logoff';
 import Cadastro from './components/Cadastro';
-import Alterar from './components/AlterarConta';
+import Alterar from './components/Conta';
 
 export default class App extends Component {
     static displayName = App.name;

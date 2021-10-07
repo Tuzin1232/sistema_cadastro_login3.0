@@ -1,7 +1,4 @@
 ﻿import React from 'react';
-import { Route } from 'react-router';
-import Excluir from './ExcluirConta';
-
 
 export default function Alterar(props) {
 
@@ -40,8 +37,7 @@ export default function Alterar(props) {
         let nomeVar = document.getElementById('nome').value
 
         if (nomeVar !== '' && senha !== '') {
-            var bool = confirm('Tem certeza que deseja excluir sua conta?')
-            if (bool == true) {
+            if (window.confirm('Tem certeza que deseja excluir sua conta?')) {
                 const requestOptions = {
 
                     method: 'DELETE',
@@ -51,6 +47,9 @@ export default function Alterar(props) {
                         senha: senha,
                     })
                 };
+                return <Redirect push to="/login" />;
+                window.alert('Conta excluia com sucesso')
+
                 fetch('api/account/excluir', requestOptions).then((response) => {
 
                     if (response.ok) {

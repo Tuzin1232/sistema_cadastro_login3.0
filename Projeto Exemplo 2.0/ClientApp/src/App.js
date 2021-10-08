@@ -8,6 +8,7 @@ import Login from './components/Login';
 import Logoff from './components/Logoff';
 import Cadastro from './components/Cadastro';
 import Conta from './components/Conta';
+import Cliente from './components/Cliente';
 
 export default class App extends Component {
     static displayName = App.name;
@@ -18,6 +19,7 @@ export default class App extends Component {
                 <Route path='/login' component={Login} />
                 <Route path="/cadastrar" component={Cadastro} />
                 <Route path="/conta" component={Conta} />
+                <Route path="/cliente" component={Cliente} />
                 <TokenProvider>
                     <Layout>
                         <Route exact path='/' component={Home} />

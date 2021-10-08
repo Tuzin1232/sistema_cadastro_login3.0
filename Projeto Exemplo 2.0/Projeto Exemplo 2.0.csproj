@@ -27,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Model\Sistema.cs" />
     <Compile Remove="WeatherForecast.cs" />
   </ItemGroup>
 

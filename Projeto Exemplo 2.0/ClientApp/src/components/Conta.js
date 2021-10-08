@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 export default function Conta(props) {
@@ -66,21 +66,28 @@ export default function Conta(props) {
 
     }
     return (
-        <div className="alteracao">
-            <form id="form1" runat="server" className="form">
-                <label>
-                    Nome:
+        <div className="App">
+            <div className="alteracao">
+                <Link to="/" className="btn btn-light" id="voltarButton">
+                <img src="https://img.icons8.com/material-outlined/24/000000/back--v1.png" />
+                </Link>
+                <form id="form1" runat="server" className="form">
+                    <label>
+                        Nome:
                 <input id="nome" type="text" name="nome" /><br />
-                </label>
-                <br />
-                <label>
-                    Nova Senha:
+                    </label>
+                    <br />
+                    <label>
+                        Nova Senha:
                 <input id="senha" type="password" name="senha" /><br />
-                </label>
-                <br />
-                <button className="btn btn-success" type="button" onClick={alterar}>Alterar</button>
-                <button className="btn btn-danger" style={{ marginLeft: '2em' }} type="button" onClick={excluir}>Excluir conta</button>
-            </form>
+                    </label>
+                    <br />
+                    <button className="btn btn-success" type="button" onClick={alterar}>Alterar</button>
+                    <button className="btn btn-danger" style={{ marginLeft: '2em' }} type="button" onClick={excluir}>Excluir conta</button>
+                    <br />
+
+                </form>
+            </div>
         </div>
     )
 }

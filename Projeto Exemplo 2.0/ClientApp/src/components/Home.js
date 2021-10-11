@@ -3,12 +3,11 @@ import { useCookies } from 'react-cookie';
 import './home.css';
 
 export function Home() {
-    const [valor, setValor] = useState("");
-    const [sistema, setSistema] = useState([])
-
+    const [id, setId] = useState(0);
     const [cookies, setCookie] = useCookies(['access_token']);
 
-    const [id, setId] = useState(0);
+    const [valor, setValor] = useState("");
+    const [sistema, setSistema] = useState([])
     const [avaliacao, setAvaliacao] = useState("");
     const [tipo, setTipo] = useState("");
     const [pendFinanceira, setPendFinanceira] = useState("");
@@ -45,34 +44,34 @@ export function Home() {
             },
             body: JSON.stringify({
                 id: id,
-                avaliacao: avaliacao,
-                tipo: tipo,
-                pend_financeira: pendFinanceira,
-                mes_atraso: Number(mesAtraso),
-                contrato_ativo: contratoAtivo,
-                nome: nome,
-                cpnj: cnpj,
-                cpf: cpf,
-                telefone: telefone,
-                celular: celular,
-                contato: contato,
-                ramo_atividade: ramoAtividade,
-                cidade: cidade,
-                rua: rua,
-                bairro: bairro,
-                numero: Number(numero),
-                UF: UF,
-                cep: Number(cep),
-                complemento: complemento,
-                ip_acesso: ipAcesso,
-                obv: obv,
-                ativo: true,
-                codigo_cliente: Number(codigoCliente),
-                sistema: sistema,
-                ativo: ativo,
-                data_inicio: dataInicio,
-                data_fim: dataFim,
-                valor: valor,
+                avaliacao: avaliacao.value,
+                tipo: tipo.value,
+                pend_financeira: pendFinanceira.value,
+                mes_atraso: Number(mesAtraso).value,
+                contrato_ativo: contratoAtivo.value,
+                nome: nome.value,
+                cpnj: cnpj.value,
+                cpf: cpf.value,
+                telefone: telefone.value,
+                celular: celular.value,
+                contato: contato.value,
+                ramo_atividade: ramoAtividade.value,
+                cidade: cidade.value,
+                rua: rua.value,
+                bairro: bairro.value,
+                numero: Number(numero).value,
+                UF: UF.value,
+                cep: Number(cep).value,
+                complemento: complemento.value,
+                ip_acesso: ipAcesso.value,
+                obv: obv.value,
+                ativo: true.value,
+                codigo_cliente: Number(codigoCliente).value,
+                sistema: sistema.value,
+                ativo: ativo.value,
+                data_inicio: dataInicio.value,
+                data_fim: dataFim.value,
+                valor: valor.value,
             })
         };
 
@@ -86,16 +85,17 @@ export function Home() {
 
         });
     }
+
     return (
         <div className="App">
-            <form className="form">
+            <form className="form" onSubmit={salvarCliente}>
                 <br />
                 <div className="div" id="infoContrato">
                     <h2>Informações do Contrato</h2>
                     <div className="divText">
                         <label htmlFor="codigo">Código</label>
                         <br />
-                        <input type="text" className="codigo" id="codigo" />
+                        <input type="text" className="codigo" id="codigo"  />
                     </div>
                     <div className="divCheckBox">
                         <label htmlFor="podeAvaliar">Pode Avaliar</label>

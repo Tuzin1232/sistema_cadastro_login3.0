@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Projeto_Exemplo_2._0;
 using Projeto_Exemplo_2._0.Model;
 using System;
@@ -19,6 +20,7 @@ namespace ProjetoExemplo_2._0.Controllers
             _Context = Context;
         }
         [HttpPost("cadastrar")]
+        [AllowAnonymous]
         public IActionResult Cadastrar([FromBody] Cliente model)
         {
             try
@@ -43,6 +45,55 @@ namespace ProjetoExemplo_2._0.Controllers
                 return BadRequest("Falha ao realizar cadastro: " + ex.Message);
             }
 
+        }
+        [HttpPut("alterar")]
+        [AllowAnonymous]
+        public IActionResult Alterar([FromBody] Cliente model)
+        {
+            try
+            {
+                var clienteExistente = _Context.Clientes.Where(u => u.nome.ToUpper() == model.nome.ToUpper()).FirstOrDefault();
+                if (clienteExistente != null)
+                {
+
+                    clienteExistente = model;
+
+                    _Context.SaveChanges();
+
+                    return Ok("Informações alteradas com sucesso");
+                }
+                else
+                {
+                    return BadRequest("Falha ao alterar suas informações");
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Error: " + ex.Message);
+            }
+        }
+        [HttpDelete("excluir")]
+        [AllowAnonymous]
+        public IActionResult Excluir([FromBody] Cliente model)
+        {
+            try
+            {
+                var clienteExistente = _Context.Clientes.Where(u => u.nome.ToUpper() == model.nome.ToUpper()).FirstOrDefault();
+                if (clienteExistente != null)
+                {
+                    _Context.Remove(clienteExistente);
+                    _Context.SaveChanges();
+                    return Ok("Informações do cliente excluidas");
+                }
+                else
+                {
+                    return BadRequest("Falha ao excluir suas informações");
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Error: " + ex.Message);
+            }
         }
 
     }

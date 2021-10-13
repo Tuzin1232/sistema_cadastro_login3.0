@@ -55,8 +55,6 @@ namespace Projeto_Exemplo_2._0.Model
 
         public bool? ativo { get; set; }
 
-        public int? codigo_cliente { get; set; }
-
         [NotMapped]
         public string token { get; set; }
     }

@@ -69,7 +69,7 @@ export default function Conta(props) {
         <div className="App">
             <div className="alteracao">
                 <Link to="/" className="btn btn-light" id="voltarButton">
-                <img src="https://img.icons8.com/material-outlined/24/000000/back--v1.png" />
+                <img alt="botao voltar" src="https://img.icons8.com/material-outlined/24/000000/back--v1.png" />
                 </Link>
                 <form id="form1" runat="server" className="form">
                     <label>

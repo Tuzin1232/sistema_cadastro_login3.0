@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Projeto_Exemplo_2._0;
 using Projeto_Exemplo_2._0.Model;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ProjetoExemplo_2._0.Controllers
@@ -87,6 +88,19 @@ namespace ProjetoExemplo_2._0.Controllers
                 {
                     return BadRequest("Falha ao excluir suas informações");
                 }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Error: " + ex.Message);
+            }
+        }
+        [HttpPost("clientes")]
+        [AllowAnonymous]
+        public ActionResult<List<Cliente>> GetClientes()
+        {
+            try
+            {
+                return Ok(_Context.Clientes.ToList());
             }
             catch (Exception ex)
             {

@@ -39,7 +39,7 @@ export class NavMenu extends Component {
                                 </NavItem>
                                 <br />
                                 <NavItem>
-                                    <NavLink tag={Link} style={{ color: 'white', width: '5em' }} className="btn btn-dark" to="/cliente">Cliente</NavLink>
+                                    <NavLink tag={Link} style={{ color: 'white', width: '10em' }} className="btn btn-dark" to="/cadastroCliente">Cadastro de Cliente</NavLink>
                                 </NavItem>
                                 <br />
                                 <NavItem>

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useCookies } from 'react-cookie';
+import { Link } from 'react-router-dom';
 import './home.css';
 
-export default function InfoCliente() {
+export default function CadastroCliente() {
     const [id] = useState(0);
     const [cookies] = useCookies(['access_token']);
 
@@ -33,10 +34,10 @@ export default function InfoCliente() {
     const [dataInicio, setDataInicio] = useState("");
     const [dataFim, setDataFim] = useState("");
 
-    function editarCliente() {
+    function cadastrarCliente() {
         const requestOptions = {
 
-            method: 'PUT',
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + cookies.access_token,
@@ -69,7 +70,7 @@ export default function InfoCliente() {
             })
         };
 
-        fetch('api/cliente/alterar', requestOptions).then((response) => {
+        fetch('api/cliente/cadastrar', requestOptions).then((response) => {
 
             if (response.ok) {
                 response.text().then(r => alert(r));
@@ -79,55 +80,6 @@ export default function InfoCliente() {
 
         });
     }
-
-    function excluirCliente() {
-        const requestOptions = {
-
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + cookies.access_token,
-            },
-            body: JSON.stringify({
-                id: id,
-                avaliacao: Boolean(avaliacao),
-                tipo: tipo,
-                pend_financeira: Boolean(pendFinanceira),
-                mes_atraso: Number(mesAtraso),
-                contrato_ativo: Boolean(contratoAtivo),
-                nome: nome,
-                cnpj: cnpj,
-                cpf: cpf,
-                telefone: telefone,
-                celular: celular,
-                contato: contato,
-                ramo_atividade: ramoAtividade,
-                cidade: cidade,
-                rua: rua,
-                bairro: bairro,
-                numero: Number(numero),
-                UF: UF,
-                cep: Number(cep),
-                complemento: complemento,
-                ip_acesso: ipAcesso,
-                obv: obv,
-                ativo: Boolean(ativo),
-
-            })
-        };
-
-        fetch('api/cliente/excluir', requestOptions).then((response) => {
-
-            if (response.ok) {
-                response.text().then(r => alert(r));
-            } else {
-                response.text().then(r => alert(r));
-            }
-
-        });
-    }
-
-    console.log(id)
 
     return (
         <div className="App">
@@ -135,6 +87,9 @@ export default function InfoCliente() {
                 <br />
                 <div className="div" id="infoContrato">
                     <h2>Informações do Contrato</h2>
+                    <Link to="/" className="btn btn-light" id="voltarButton">
+                        <img alt="botao voltar" src="https://img.icons8.com/material-outlined/24/000000/back--v1.png" />
+                    </Link>
                     <div className="divText">
                         <label htmlFor="codigo">Código</label>
                         <br />
@@ -305,8 +260,7 @@ export default function InfoCliente() {
                         <input type="date" className="dataFim" id="dataFim" value={dataFim} onChange={(e) => setDataFim(e.target.value)} />
                     </div>
                     <br />
-                    <button type="button" id="editar" style={{ marginRight: '10px' }} className="btn btn-warning" onClick={editarCliente}>Salvar Alterações</button>
-                    <button type="button" id="excluir" style={{ marginRight: '10px' }} className="btn btn-danger" onClick={excluirCliente}>Excluir Informações</button>
+                    <button type="button" id="editar" style={{ marginRight: '10px' }} className="btn btn-success" onClick={cadastrarCliente}>Salvar</button>
                 </div>
             </form>
         </div>

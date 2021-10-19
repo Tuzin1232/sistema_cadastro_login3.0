@@ -9,6 +9,7 @@ import Logoff from './components/Logoff';
 import Cadastro from './components/Cadastro';
 import Conta from './components/Conta';
 import InfoCliente from './components/InfoCliente';
+import CadastroCliente from './components/CadastroCliente'
 
 export default class App extends Component {
     static displayName = App.name;
@@ -20,6 +21,7 @@ export default class App extends Component {
                 <Route path="/cadastrar" component={Cadastro} />
                 <Route path="/conta" component={Conta} />
                 <Route path="/infoCliente" component={InfoCliente} />
+                <Route path="/cadastroCliente" component={CadastroCliente} />
                 <TokenProvider>
                     <Layout>
                         <Route exact path='/' component={Home} />

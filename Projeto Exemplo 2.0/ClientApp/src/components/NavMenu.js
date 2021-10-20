@@ -29,7 +29,7 @@ export class NavMenu extends Component {
                         <NavbarBrand tag={Link} style={{ color: 'white' }} to="/">Sistema de Cadastro</NavbarBrand>
                         <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
                         <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
-                            <ul className="navbar-nav flex-grow" style={{gap: '10px'}}>
+                            <ul className="navbar-nav flex-grow" style={{ gap: '10px' }}>
                                 <NavItem>
                                     <NavLink tag={Link} style={{ color: 'white', width: '4em' }} title="Home" className="btn btn-primary" to="/"><img src="https://img.icons8.com/ios-filled/24/ffffff/home.png" /></NavLink>
                                 </NavItem>
@@ -43,13 +43,17 @@ export class NavMenu extends Component {
                                 </NavItem>
                                 <br />
                                 <NavItem>
+                                    <NavLink tag={Link} style={{ color: 'white', width: '4em' }} title="Suporte" className="btn btn-light" to="/suporte" ><img src="https://img.icons8.com/ios/24/000000/customer-support.png" /></NavLink>
+                                </NavItem>
+                                <br />
+                                <NavItem>
                                     <NavLink tag={Link} style={{ color: 'white', width: '4em' }} title="Sair" className="btn btn-danger" to="/login"><img src="https://img.icons8.com/ios-filled/24/ffffff/exit.png" /></NavLink>
                                 </NavItem>
                             </ul>
                         </Collapse>
                     </Container>
                 </Navbar>
-            </header>
+            </header >
         );
     }
 }

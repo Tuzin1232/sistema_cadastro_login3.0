@@ -63,9 +63,8 @@ table, th, td {
 }
 
 .div {
-    margin-left: 22%;
     text-align: center;
-    width: 50%;
+    width: 100%;
     background-color: rgb(19, 19, 19);
     padding: 4em;
     border-radius: 20px;
@@ -79,27 +78,16 @@ table, th, td {
     width: 0;
 }
 
-.alteracao {
+.background {
     background-color: rgb(19, 19, 19);
-    padding: 10em;
+    padding: 5em;
     margin-top: 4em;
-    width: 60%;
+    width: 100%;
     text-align: center;
-    margin-left: 20%;
     border-radius: 25px;
 }
 
-.cliente {
-    background-color: rgb(19, 19, 19);
-    padding: 10em;
-    margin-top: 4em;
-    width: 60%;
-    text-align: center;
-    margin-left: 20%;
-    border-radius: 25px;
+.back{
+    float: left;
 }
 
-#voltarButton{
-    margin-left: -50em;
-    margin-top: -12em;
-}

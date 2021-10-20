@@ -67,20 +67,25 @@ export default function Conta(props) {
     }
     return (
         <div className="App">
-            <div className="alteracao">
-                <Link to="/" className="btn btn-light" id="voltarButton">
-                <img alt="botao voltar" src="https://img.icons8.com/material-outlined/24/000000/back--v1.png" />
-                </Link>
+            <div className="background">
+                <div className="back">
+                    <Link to="/" className="btn btn-light" id="voltarButton">
+                        <img alt="botao voltar" src="https://img.icons8.com/material-outlined/24/000000/back--v1.png" />
+                    </Link>
+                </div>
+                <br />
                 <form id="form1" runat="server" className="form">
                     <label>
                         Nome:
-                <input id="nome" type="text" name="nome" /><br />
                     </label>
+                    <br />
+                    <input id="nome" type="text" name="nome" /><br />
                     <br />
                     <label>
                         Nova Senha:
-                <input id="senha" type="password" name="senha" /><br />
                     </label>
+                    <br />
+                    <input id="senha" type="password" name="senha" /><br />
                     <br />
                     <button className="btn btn-success" type="button" onClick={alterar}>Alterar</button>
                     <button className="btn btn-danger" style={{ marginLeft: '2em' }} type="button" onClick={excluir}>Excluir conta</button>

@@ -44,7 +44,7 @@ export default function Cliente(props) {
         });
 
     return (
-        <div className="cliente">
+        <div className="background">
             <h1>Clientes</h1>
             <br />
             <table id="tabela" style={{ width: '100%' }}>

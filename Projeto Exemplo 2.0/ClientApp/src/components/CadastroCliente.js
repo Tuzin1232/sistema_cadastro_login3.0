@@ -86,10 +86,13 @@ export default function CadastroCliente() {
             <form className="form" >
                 <br />
                 <div className="div" id="infoContrato">
+                    <div className="back">
+                        <Link to="/" className="btn btn-light" id="voltarButton">
+                            <img alt="botao voltar" src="https://img.icons8.com/material-outlined/24/000000/back--v1.png" />
+                        </Link>
+                    </div>
+                    <br />
                     <h2>Informações do Contrato</h2>
-                    <Link to="/" className="btn btn-light" id="voltarButton">
-                        <img alt="botao voltar" src="https://img.icons8.com/material-outlined/24/000000/back--v1.png" />
-                    </Link>
                     <div className="divText">
                         <label htmlFor="codigo">Código</label>
                         <br />

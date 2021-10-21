@@ -1,6 +1,5 @@
 ﻿import React, { useState } from 'react';
 import { useCookies } from 'react-cookie';
-import { Link } from 'react-router-dom';
 import "./home.css";
 
 export default function Cliente(props) {
@@ -44,7 +43,7 @@ export default function Cliente(props) {
         });
 
     return (
-        <div className="background">
+        <div className="div">
             <h1>Clientes</h1>
             <br />
             <table id="tabela" style={{ width: '100%' }}>

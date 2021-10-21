@@ -67,14 +67,12 @@ export default function Conta(props) {
     }
     return (
         <div className="App">
-            <div className="background">
-                <div className="back">
-                    <Link to="/" className="btn btn-light" id="voltarButton">
-                        <img alt="botao voltar" src="https://img.icons8.com/material-outlined/24/000000/back--v1.png" />
-                    </Link>
-                </div>
+            <Link to="/" className="btn btn-light" id="voltarButton">
+                <img alt="botao voltar" src="https://img.icons8.com/material-outlined/24/000000/back--v1.png" />
+            </Link>
+            <div className="div">
                 <br />
-                <form id="form1" runat="server" className="form">
+                <form id="form1" runat="server" className="form" style={{ display: 'inline-table' }}>
                     <label>
                         Nome:
                     </label>
@@ -88,7 +86,8 @@ export default function Conta(props) {
                     <input id="senha" type="password" name="senha" /><br />
                     <br />
                     <button className="btn btn-success" type="button" onClick={alterar}>Alterar</button>
-                    <button className="btn btn-danger" style={{ marginLeft: '2em' }} type="button" onClick={excluir}>Excluir conta</button>
+                    <br />
+                    <button className="btn btn-danger" type="button" onClick={excluir}>Excluir conta</button>
                     <br />
 
                 </form>

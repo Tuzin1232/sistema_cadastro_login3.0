@@ -83,12 +83,11 @@ export default function CadastroCliente() {
 
     return (
         <div className="App">
-            <br />
             <form className="form" >
                 <br />
-            <Link to="/" className="btn btn-light" id="voltarButton">
-                <img alt="botao voltar" src="https://img.icons8.com/material-outlined/24/000000/back--v1.png" />
-            </Link>
+                <Link to="/" className="btn btn-light" id="voltarButton">
+                    <img alt="botao voltar" src="https://img.icons8.com/material-outlined/24/000000/back--v1.png" />
+                </Link>
                 <div className="div" id="infoContrato">
                     <h2>Informações do Contrato</h2>
                     <br />

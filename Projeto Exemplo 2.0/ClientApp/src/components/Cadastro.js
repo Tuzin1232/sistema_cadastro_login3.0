@@ -34,22 +34,24 @@ export default function Cadastro(props) {
 
     return (
         <div className="cadastro">
-            <form id="form1" runat="server" className="form">
-                <label>
-                    Nome:
+            <div className="div">
+                <form id="form1" runat="server" className="form">
+                    <label>
+                        Nome:
                 <input id="nome" type="text" name="nome" /><br />
-                </label>
-                <br />
-                <label>
-                    Senha:
+                    </label>
+                    <br />
+                    <label>
+                        Senha:
                 <input id="senha" type="password" name="senha" /><br />
-                </label>
-                <br />
-                <button className="btn btn-success" type="button" onClick={cadastrar}>Cadastrar</button>
-                <br />
-                <p>Já possui uma conta?</p>
-                <Link className="btn btn-info" to="/login">Logar</Link>
-            </form>
+                    </label>
+                    <br />
+                    <button className="btn btn-success" type="button" onClick={cadastrar}>Cadastrar</button>
+                    <br />
+                    <p>Já possui uma conta?</p>
+                    <Link className="btn btn-info" to="/login">Logar</Link>
+                </form>
+            </div>
         </div>
     )
 }

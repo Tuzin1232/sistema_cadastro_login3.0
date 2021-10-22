@@ -33,7 +33,7 @@ export default function Cliente(props) {
                 nome.innerHTML = data[i].nome
                 id.innerHTML = data[i].id
                 link.innerHTML = data[i].link
-                link.onclick = {redirect}
+                link.onclick = { redirect }
                 tr.appendChild(nome)
                 tr.appendChild(id)
                 tr.appendChild(link)

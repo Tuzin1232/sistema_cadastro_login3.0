@@ -57,20 +57,22 @@ export default function Login(props) {
 
     return (
         <form id="form1" runat="server" onSubmit={initialState} className="form">
-            <label>
-                Nome:
+            <div className="div">
+                <label>
+                    Nome:
                 <input type="text" name="nome" value={nomeUsuario} onChange={(e) => setNomeUsuario(e.target.value)} /><br />
-            </label>
-            <br />
-            <label>
-                Senha:
+                </label>
+                <br />
+                <label>
+                    Senha:
                 <input type="password" name="senha" value={senha} onChange={(e) => setSenha(e.target.value)} /><br />
-            </label>
-            <br />
-            <button className="btn btn-success" type="submit" >Entrar</button>
-            <br />
-            <p>É novo no site?</p>
-            <Link className="btn btn-info" to="/cadastrar">Cadastro</Link>
+                </label>
+                <br />
+                <button className="btn btn-success" type="submit" >Entrar</button>
+                <br />
+                <p>É novo no site?</p>
+                <Link className="btn btn-info" to="/cadastrar">Cadastro</Link>
+            </div>
         </form>
     );
 }

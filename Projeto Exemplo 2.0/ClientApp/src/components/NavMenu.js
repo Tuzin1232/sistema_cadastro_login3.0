@@ -49,6 +49,9 @@ export class NavMenu extends Component {
                                 <NavItem>
                                     <NavLink tag={Link} style={{ color: 'white', width: '4em' }} title="Sair" className="btn btn-danger" to="/login"><img src="https://img.icons8.com/ios-filled/24/ffffff/exit.png" /></NavLink>
                                 </NavItem>
+                                <NavItem>
+                                    <NavLink tag={Link} style={{ color: 'white', width: '4em' }} title="teste" className="btn btn-danger" to="/respostaSuporte">teste</NavLink>
+                                </NavItem>
                             </ul>
                         </Collapse>
                     </Container>

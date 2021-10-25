@@ -92,15 +92,13 @@ export default function Suporte() {
                             <option value="tempo">Tempo</option>
                         </select>
                     </div>
-                    <div className="divText">
-                        <br />
-                        <input type="text" className="pesquisa" style={{ width: '20em' }} />
-                    </div>
                 </div>
+                <input type="text" className="pesquisa" />
+                <img src="https://img.icons8.com/material-outlined/24/000000/search--v1.png" style={{ float: 'right' }} />
             </div>
             <br />
             <div className="div">
-                <table>
+                <table className="table">
                     <thead>
                         <tr>
                             <th>Código</th>

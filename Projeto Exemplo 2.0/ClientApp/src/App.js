@@ -11,6 +11,7 @@ import Conta from './components/Conta';
 import InfoCliente from './components/InfoCliente';
 import CadastroCliente from './components/CadastroCliente'
 import Suporte from './components/Suporte'
+import RespostaSuporte from './components/RespostaSuporte';
 
 export default class App extends Component {
     static displayName = App.name;
@@ -24,6 +25,7 @@ export default class App extends Component {
                 <Route path="/infoCliente" component={InfoCliente} />
                 <Route path="/cadastroCliente" component={CadastroCliente} />
                 <Route path="/suporte" component={Suporte} />
+                <Route path="/respostaSuporte" component={RespostaSuporte} />
                 <TokenProvider>
                     <Layout>
                         <Route exact path='/' component={Home} />

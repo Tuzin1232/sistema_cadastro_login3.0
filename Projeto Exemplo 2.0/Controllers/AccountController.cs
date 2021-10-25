@@ -4,10 +4,7 @@ using Projeto_Exemplo_2._0;
 using Projeto_Exemplo_2._0.Model;
 using Projeto_Exemplo_2._0.Services;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ProjetoExemplo_2._0.Controllers
 {

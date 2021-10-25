@@ -14,8 +14,8 @@ select {
     width: 100%;
     border: none;
     background: none;
-    border-bottom: 2px solid #0066cc;
-    margin-top: 2.02em;
+    border-bottom: 2px solid #703db4;
+    margin-top: 2em;
     outline: none;
 }
 
@@ -26,7 +26,7 @@ input[type=text], input[type=number], input[type=password], input[type=email], i
     border: none;
     box-sizing: border-box;
     background: none;
-    border-bottom: 2px solid #0066cc;
+    border-bottom: 2px solid #703db4;
     outline: none;
 }
 
@@ -46,8 +46,11 @@ div {
     line-height: 3em;
 }
 
-table, th, td {
+table, th, td, tr {
     border: 1px solid black;
+}
+
+.table {
 }
 
 .div {
@@ -87,5 +90,5 @@ table, th, td {
 #voltarButton {
     float: left;
     margin: 1em;
-    border: 2px solid black;
+    border: 1px solid grey;
 }

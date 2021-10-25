@@ -46,7 +46,7 @@ export default function Cliente(props) {
         <div className="div">
             <h1>Clientes</h1>
             <br />
-            <table id="tabela" style={{ width: '100%' }}>
+            <table id="tabela" className="table">
                 <thead>
                     <tr>
                         <th>

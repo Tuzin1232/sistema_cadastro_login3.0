@@ -1,6 +1,7 @@
 ﻿import React from 'react';
 import { Link } from 'react-router-dom';
-
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 export default function Conta(props) {
 
@@ -71,25 +72,14 @@ export default function Conta(props) {
                 <img alt="botao voltar" src="https://img.icons8.com/material-outlined/24/000000/back--v1.png" />
             </Link>
             <div className="div">
-                <br />
-                <form id="form1" runat="server" className="form" style={{ display: 'inline-table' }}>
-                    <label>
-                        Nome:
-                    </label>
+                <form id="form1" runat="server" className="form">
+                    <TextField id="nome" label="Nome:" variant="standard" />
                     <br />
-                    <input id="nome" type="text" name="nome" /><br />
+                    <TextField id="senha" type="password" label="Senha:" variant="standard" />
                     <br />
-                    <label>
-                        Nova Senha:
-                    </label>
+                    <Button variant="contained" color="success" onClick={alterar}>Alterar</Button>
                     <br />
-                    <input id="senha" type="password" name="senha" /><br />
-                    <br />
-                    <button className="btn btn-success" type="button" onClick={alterar}>Alterar</button>
-                    <br />
-                    <button className="btn btn-danger" type="button" onClick={excluir}>Excluir conta</button>
-                    <br />
-
+                    <Button variant="contained" color="error" onClick={excluir}>Excluir conta</Button>
                 </form>
             </div>
         </div>

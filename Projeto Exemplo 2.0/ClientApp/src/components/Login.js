@@ -2,6 +2,9 @@
 import { Redirect, Router } from 'react-router';
 import { Link } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+
 
 export default function Login(props) {
     const [cookies, setCookie] = useCookies(['access_token'])
@@ -14,7 +17,6 @@ export default function Login(props) {
 
     function handleErrors(response) {
 
-
         if (!response.ok) {
             response.text().then(r => alert(r));
         } else {
@@ -25,8 +27,6 @@ export default function Login(props) {
                 setCookie('access_token', data.token, { path: '/', expires });
 
             }).then(setRedirect(true));
-
-
 
         }
         return response;
@@ -48,7 +48,6 @@ export default function Login(props) {
 
         fetch('api/account/login', requestOptions).then(handleErrors);
 
-
     };
 
     if (redirect) {
@@ -58,20 +57,16 @@ export default function Login(props) {
     return (
         <form id="form1" runat="server" onSubmit={initialState} className="form">
             <div className="div">
-                <label>
-                    Nome:
-                <input type="text" name="nome" value={nomeUsuario} onChange={(e) => setNomeUsuario(e.target.value)} /><br />
-                </label>
+                <TextField id="nome" label="Nome:" variant="outlined" value={nomeUsuario} onChange={(e) => setNomeUsuario(e.target.value)} />
                 <br />
-                <label>
-                    Senha:
-                <input type="password" name="senha" value={senha} onChange={(e) => setSenha(e.target.value)} /><br />
-                </label>
+                <TextField id="senha" label="Senha:" variant="outlined" value={senha} onChange={(e) => setSenha(e.target.value)} />
                 <br />
-                <button className="btn btn-success" type="submit" >Entrar</button>
+                <Button variant="contained" color="success" type="submit">
+                    Entrar
+                </Button>
                 <br />
                 <p>É novo no site?</p>
-                <Link className="btn btn-info" to="/cadastrar">Cadastro</Link>
+                <Link className="btn btn-info" to="/cadastrar">CADASTRAR</Link>
             </div>
         </form>
     );

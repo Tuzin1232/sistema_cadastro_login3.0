@@ -1,5 +1,7 @@
 ﻿import React from 'react';
 import { Link } from 'react-router-dom';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 export default function Cadastro(props) {
 
@@ -36,20 +38,16 @@ export default function Cadastro(props) {
         <div className="cadastro">
             <div className="div">
                 <form id="form1" runat="server" className="form">
-                    <label>
-                        Nome:
-                <input id="nome" type="text" name="nome" /><br />
-                    </label>
+                    <TextField id="nome" label="Nome:" variant="outlined" />
                     <br />
-                    <label>
-                        Senha:
-                <input id="senha" type="password" name="senha" /><br />
-                    </label>
+                    <TextField id="senha" type="password" label="Senha:" variant="outlined" />
                     <br />
-                    <button className="btn btn-success" type="button" onClick={cadastrar}>Cadastrar</button>
+                    <Button variant="contained" color="success" onClick={cadastrar}>
+                        CADASTRAR
+                    </Button>
                     <br />
                     <p>Já possui uma conta?</p>
-                    <Link className="btn btn-info" to="/login">Logar</Link>
+                    <Link className="btn btn-info" to="/login">LOGAR</Link>
                 </form>
             </div>
         </div>

@@ -117,7 +117,7 @@ export default function CadastroCliente() {
                                     onChange={(e) => setAvaliacao(e.target.checked ? "Sim" : "Não")} />}
                                 label="Pode Avaliar" />
                         </FormGroup>
-                        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+                        <FormControl variant="standard" sx={{  minWidth: 120 }}>
                             <InputLabel >Tipo:</InputLabel>
                             <Select
                                 id="tipo"
@@ -212,7 +212,7 @@ export default function CadastroCliente() {
                             value={contato}
                             onChange={(e) => setContato(e.target.value)} />
 
-                        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+                        <FormControl variant="standard" sx={{ minWidth: 120 }}>
                             <InputLabel>Ramo de Atividade:</InputLabel>
                             <Select
                                 id="ramo"
@@ -257,7 +257,7 @@ export default function CadastroCliente() {
                             value={numero}
                             onChange={(e) => setNumero(e.target.value)} />
 
-                        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+                        <FormControl variant="standard" sx={{ minWidth: 120 }}>
                             <InputLabel>UF:</InputLabel>
                             <Select
                                 id="UF"
@@ -343,7 +343,7 @@ export default function CadastroCliente() {
                                 label="Ativo" />
                         </FormGroup>
 
-                        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+                        <FormControl variant="standard" sx={{ minWidth: 120 }}>
                             <InputLabel >Sistema:</InputLabel>
                             <Select
                                 id="sistema"

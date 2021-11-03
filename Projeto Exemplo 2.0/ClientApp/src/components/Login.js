@@ -57,9 +57,9 @@ export default function Login(props) {
     return (
         <form id="form1" runat="server" onSubmit={initialState} className="form">
             <div className="div">
-                <TextField id="nome" label="Nome:" variant="outlined" value={nomeUsuario} onChange={(e) => setNomeUsuario(e.target.value)} />
+                <TextField id="nome" label="Nome:" variant="standard" value={nomeUsuario} onChange={(e) => setNomeUsuario(e.target.value)} />
                 <br />
-                <TextField id="senha" label="Senha:" variant="outlined" value={senha} onChange={(e) => setSenha(e.target.value)} />
+                <TextField id="senha" label="Senha:" variant="standard" value={senha} onChange={(e) => setSenha(e.target.value)} />
                 <br />
                 <Button variant="contained" color="success" type="submit">
                     Entrar

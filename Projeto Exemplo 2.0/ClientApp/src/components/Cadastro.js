@@ -38,9 +38,9 @@ export default function Cadastro(props) {
         <div className="cadastro">
             <div className="div">
                 <form id="form1" runat="server" className="form">
-                    <TextField id="nome" label="Nome:" variant="outlined" />
+                    <TextField id="nome" label="Nome:" variant="standard" />
                     <br />
-                    <TextField id="senha" type="password" label="Senha:" variant="outlined" />
+                    <TextField id="senha" type="password" label="Senha:" variant="standard" />
                     <br />
                     <Button variant="contained" color="success" onClick={cadastrar}>
                         CADASTRAR

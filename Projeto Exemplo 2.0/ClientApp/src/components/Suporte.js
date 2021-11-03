@@ -61,7 +61,7 @@ export default function Suporte() {
 
                     <FormGroup style={flexContainer}>
 
-                        <FormControl variant="standard" sx={{ m: 1, minWidth: 150 }}>
+                        <FormControl variant="standard" sx={{ minWidth: 150 }}>
                             <InputLabel >Filtrar por status:</InputLabel>
                             <Select
                                 id="filtro"
@@ -92,7 +92,7 @@ export default function Suporte() {
 
                         </FormGroup>
 
-                        <FormControl variant="standard" sx={{ m: 1, minWidth: 130 }}>
+                        <FormControl variant="standard" sx={{ minWidth: 130 }}>
                             <InputLabel>Pesquisar por:</InputLabel>
                             <Select
                                 id="pesquisaPor"

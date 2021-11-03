@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 19-Out-2021 às 14:50
+-- Tempo de geração: 03-Nov-2021 às 12:26
 -- Versão do servidor: 8.0.21
 -- versão do PHP: 7.3.21
 
@@ -84,6 +84,27 @@ CREATE TABLE IF NOT EXISTS `clientesistemas` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `feedback`
+--
+
+DROP TABLE IF EXISTS `feedback`;
+CREATE TABLE IF NOT EXISTS `feedback` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `data` date NOT NULL,
+  `cliente` varchar(255) NOT NULL,
+  `usuario` varchar(255) NOT NULL,
+  `tipo` varchar(255) NOT NULL,
+  `sistema` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `assunto` varchar(255) NOT NULL,
+  `responsavel` varchar(255) NOT NULL,
+  `feedback` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `sistemas`
 --
 
@@ -110,6 +131,28 @@ INSERT INTO `sistemas` (`nome`, `id`) VALUES
 ('SCA', 9),
 ('SCA/SAS', 10),
 ('SE', 11);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `suporteregistros`
+--
+
+DROP TABLE IF EXISTS `suporteregistros`;
+CREATE TABLE IF NOT EXISTS `suporteregistros` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `data` date DEFAULT NULL,
+  `cliente` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `status_cliente` varchar(255) DEFAULT NULL,
+  `assunto` varchar(255) DEFAULT NULL,
+  `sistema` varchar(255) DEFAULT NULL,
+  `criou` varchar(255) DEFAULT NULL,
+  `respondeu` varchar(255) DEFAULT NULL,
+  `conclusao` date DEFAULT NULL,
+  `tempo` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 

@@ -1,25 +1,24 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Projeto_Exemplo_2._0;
 using Projeto_Exemplo_2._0.Model;
 using System;
 
-namespace ProjetoExemplo_2._0.Controllers
+namespace Projeto_Exemplo_2._0.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SuporteController : Controller
+    public class FeedbackSuporteController : Controller
     {
         private readonly AppDatabase _Context;
 
-        public SuporteController(AppDatabase Context)
+        public FeedbackSuporteController(AppDatabase Context)
         {
             _Context = Context;
         }
 
         [HttpPost("feedback")]
         [AllowAnonymous]
-        public IActionResult Postar([FromBody] Suporte model)
+        public IActionResult Postar([FromBody] FeedbackSuporte model )
         {
             try
             {

@@ -1,8 +1,18 @@
 import React, { useState } from 'react';
 import { useCookies } from 'react-cookie';
+import { Link } from 'react-router-dom';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Switch from '@mui/material/Switch';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 import './home.css';
 
-export default function InfoCliente() {
+export default function CadastroCliente() {
     const [id] = useState(0);
     const [cookies] = useCookies(['access_token']);
 
@@ -127,186 +137,312 @@ export default function InfoCliente() {
         });
     }
 
-    console.log(id)
-
     return (
         <div className="App">
             <form className="form" >
                 <br />
+                <Link to="/" className="btn btn-light" id="voltarButton">
+                    <img alt="botao voltar" src="https://img.icons8.com/material-outlined/24/000000/back--v1.png" />
+                </Link>
                 <div className="div" id="infoContrato">
                     <h2>Informações do Contrato</h2>
-                    <div className="divText">
-                        <label htmlFor="codigo">Código</label>
-                        <br />
-                        <input type="text" className="codigo" id="codigo" value={id} />
-                    </div>
-                    <div className="divCheckBox">
-                        <label htmlFor="podeAvaliar">Pode Avaliar</label>
-                        <input type="checkbox" id="avaliacao" defaultChecked={false} value={avaliacao} onChange={(e) => setAvaliacao(e.target.checked ? "Sim" : "Não")} />
-                    </div>
-                    <div className="divSelect">
-                        <label htmlFor="tipo">Tipo</label>
-                        <select style={{ marginLeft: '1em' }} id="tipo" className="tipo" value={tipo} onChange={(e) => setTipo(e.target.value)}>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                    <div className="divCheckBox">
-                        <label htmlFor="pendFinanceira">Pendência Financeira</label>
-                        <input type="checkbox" id="pend_financeira" defaultChecked={false} value={pendFinanceira} onChange={(e) => setPendFinanceira(e.target.checked ? "Sim" : "Não")} />
-                    </div>
-                    <div className="divText">
-                        <label htmlFor="mesAtraso">Meses em atraso</label>
-                        <input type="text" className="mesAtraso" id="mesAtraso" value={mesAtraso} onChange={(e) => setMesAtraso(e.target.value)} />
-                    </div>
-                    <div className="divCheckBox">
-                        <label htmlFor="contratoAtivo">Contrato Ativo</label>
-                        <input type="checkbox" id="contratoAtivo" defaultChecked={false} value={contratoAtivo} onChange={(e) => setContratoAtivo(e.target.checked ? "Sim" : "Não")} />
+                    <br />
+                    <div className="conteudo">
+
+                        <TextField
+                            id="codigo"
+                            label="Código:"
+                            variant="standard"
+                            value={id} />
+
+                        <FormGroup>
+                            <FormControlLabel control={
+                                <Switch
+                                    id="avaliacao"
+                                    defaultChecked={true}
+                                    value={avaliacao}
+                                    onChange={(e) => setAvaliacao(e.target.checked ? "Sim" : "Não")} />}
+                                label="Pode Avaliar" />
+                        </FormGroup>
+                        <FormControl variant="standard" sx={{ minWidth: 120 }}>
+                            <InputLabel >Tipo:</InputLabel>
+                            <Select
+                                id="tipo"
+                                value={tipo}
+                                label="Tipo:"
+                                onChange={(e) => setTipo(e.target.value)}>
+                                <MenuItem value="">
+                                    <em>Selecionar</em>
+                                </MenuItem>
+                                <MenuItem value="1">2</MenuItem>
+                                <MenuItem value="2">2</MenuItem>
+                                <MenuItem value="3">3</MenuItem>
+                            </Select>
+                        </FormControl>
+                        <FormGroup>
+                            <FormControlLabel control={
+                                <Switch
+                                    id="pend_financeira"
+                                    defaultChecked={true}
+                                    value={pendFinanceira}
+                                    onChange={(e) => setPendFinanceira(e.target.checked ? "Sim" : "Não")} />}
+                                label="Pendência Financeira" />
+                        </FormGroup>
+
+                        <TextField
+                            id="mesAtraso"
+                            label="Meses em Atraso:"
+                            variant="standard"
+                            value={mesAtraso}
+                            onChange={(e) => setMesAtraso(e.target.value)} />
+
+                        <FormGroup>
+                            <FormControlLabel control={
+                                <Switch
+                                    id="contratoAtivo"
+                                    defaultChecked={true}
+                                    value={contratoAtivo}
+                                    onChange={(e) => setContratoAtivo(e.target.checked ? "Sim" : "Não")} />}
+                                label="Contrato Ativo" />
+                        </FormGroup>
                     </div>
                 </div>
                 <br />
                 <div className="div" id="infoCliente">
                     <h2>Informações do Cliente</h2>
-                    <div className="divText">
-                        <label htmlFor="nome">Nome</label>
-                        <input type="text" className="nome" id="nome" value={nome} onChange={(e) => setNome(e.target.value)} />
-                    </div>
-                    <div className="divNumber">
-                        <label htmlFor="cnpj">CNPJ</label>
-                        <input type="number" className="cnpj" id="cnpj" value={cnpj} onChange={(e) => setCnpj(e.target.value)} />
-                    </div>
-                    <div className="divNumber">
-                        <label htmlFor="cpf">CPF</label>
-                        <input type="number" className="cpf" id="cpf" value={cpf} onChange={(e) => setCpf(e.target.value)} />
-                    </div>
-                    <div className="divNumber">
-                        <label htmlFor="tel">Telefone</label>
-                        <input type="number" className="tel" id="tel" value={telefone} onChange={(e) => setTelefone(e.target.value)} />
-                    </div>
-                    <div className="divNumber">
-                        <label htmlFor="cel">Celular</label>
-                        <input type="number" className="cel" id="cel" value={celular} onChange={(e) => setCelular(e.target.value)} />
-                    </div>
-                    <div className="divText">
-                        <label htmlFor="contato">Contato</label>
-                        <input type="email" className="contato" id="contato" value={contato} onChange={(e) => setContato(e.target.value)} />
-                    </div>
-                    <div className="divSelect">
-                        <label htmlFor="ramo">Ramo de Atividade</label>
-                        <select style={{ marginLeft: '1em' }} id="ramo" className="ramo" value={ramoAtividade} onChange={(e) => setRamoAtividade(e.target.value)}>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                    <div className="divText">
-                        <label htmlFor="cidade">Cidade</label>
-                        <input type="text" className="cidade" id="cidade" value={cidade} onChange={(e) => setCidade(e.target.value)} />
-                    </div>
-                    <div className="divText">
-                        <label htmlFor="rua">Rua</label>
-                        <input type="text" className="rua" id="rua" value={rua} onChange={(e) => setRua(e.target.value)} />
-                    </div>
-                    <div className="divText">
-                        <label htmlFor="bairro">Bairro</label>
-                        <input type="text" className="bairro" id="bairro" value={bairro} onChange={(e) => setBairro(e.target.value)} />
-                    </div>
-                    <div className="divNumber">
-                        <label htmlFor="numero">Número</label>
-                        <input type="number" className="numero" id="numero" value={numero} onChange={(e) => setNumero(e.target.value)} />
-                    </div>
-                    <div className="divSelect">
-                        <label htmlFor="uf">UF</label>
-                        <select style={{ marginLeft: '1em' }} id="uf" className="uf" value={UF} onChange={(e) => setUF(e.target.value)}>
-                            <option value="AC">AC</option>
-                            <option value="AL">AL</option>
-                            <option value="AP">AP</option>
-                            <option value="AM">AM</option>
-                            <option value="BA">BA</option>
-                            <option value="CE">CE</option>
-                            <option value="ES">ES</option>
-                            <option value="GO">GO</option>
-                            <option value="MA">MA</option>
-                            <option value="MT">MT</option>
-                            <option value="MS">MS</option>
-                            <option value="MG">MG</option>
-                            <option value="PA">PA</option>
-                            <option value="PB">PB</option>
-                            <option value="PR">PR</option>
-                            <option value="PE">PE</option>
-                            <option value="PI">PI</option>
-                            <option value="RJ">RJ</option>
-                            <option value="RN">RN</option>
-                            <option value="RS">RS</option>
-                            <option value="RO">RO</option>
-                            <option value="RR">RR</option>
-                            <option value="SC">SC</option>
-                            <option value="SP">SP</option>
-                            <option value="SE">SE</option>
-                            <option value="TO">TO</option>
-                            <option value="DF">DF</option>
-                        </select>
-                    </div>
-                    <div className="divNumber">
-                        <label htmlFor="cep">CEP</label>
-                        <input type="number" className="cep" id="cep" value={cep} onChange={(e) => setCep(e.target.value)} />
-                    </div>
-                    <div className="divText">
-                        <label htmlFor="complemento">Complemento</label>
-                        <input type="text" className="complemento" id="complemento" value={complemento} onChange={(e) => setComplemento(e.target.value)} />
-                    </div>
-                    <div className="divText">
-                        <label htmlFor="ip_acesso">Ip de Acesso</label>
-                        <input type="text" className="ip_acesso" id="ip_acesso" value={ipAcesso} onChange={(e) => setIpAcesso(e.target.value)} />
-                    </div>
-                    <div className="divText">
-                        <label htmlFor="obv">Observação</label>
-                        <input type="text" className="obv" id="obv" value={obv} onChange={(e) => setObv(e.target.value)} />
+                    <br />
+                    <div className="conteudo">
+                        <TextField
+                            id="nome"
+                            label="Nome:"
+                            variant="standard"
+                            value={nome}
+                            onChange={(e) => setNome(e.target.value)} />
+
+                        <TextField
+                            id="cpf"
+                            type="number"
+                            label="CPF:"
+                            variant="standard"
+                            value={cpf}
+                            onChange={(e) => setCpf(e.target.value)} />
+
+                        <TextField
+                            id="cnpj"
+                            type="number"
+                            label="CNPJ:"
+                            variant="standard"
+                            value={cnpj}
+                            onChange={(e) => setCnpj(e.target.value)} />
+
+                        <TextField
+                            id="tel"
+                            type="number"
+                            label="Telefone:"
+                            variant="standard"
+                            value={telefone}
+                            onChange={(e) => setTelefone(e.target.value)} />
+
+                        <TextField
+                            id="cel"
+                            type="number"
+                            label="Celular:"
+                            variant="standard"
+                            value={celular}
+                            onChange={(e) => setCelular(e.target.value)} />
+
+                        <TextField
+                            id="contato"
+                            type="email"
+                            label="Contato:"
+                            variant="standard"
+                            value={contato}
+                            onChange={(e) => setContato(e.target.value)} />
+
+                        <FormControl variant="standard" sx={{ minWidth: 120 }}>
+                            <InputLabel>Ramo de Atividade:</InputLabel>
+                            <Select
+                                id="ramo"
+                                value={ramoAtividade}
+                                label="Tipo:"
+                                onChange={(e) => setRamoAtividade(e.target.value)}>
+                                <MenuItem value="">
+                                    <em>Selecionar</em>
+                                </MenuItem>
+                                <MenuItem value="1">2</MenuItem>
+                                <MenuItem value="2">2</MenuItem>
+                                <MenuItem value="3">3</MenuItem>
+                            </Select>
+                        </FormControl>
+
+                        <TextField
+                            id="cidade"
+                            label="Cidade:"
+                            variant="standard"
+                            value={cidade}
+                            onChange={(e) => setCidade(e.target.value)} />
+
+                        <TextField
+                            id="rua"
+                            label="Rua:"
+                            variant="standard"
+                            value={rua}
+                            onChange={(e) => setRua(e.target.value)} />
+
+                        <TextField
+                            id="bairro"
+                            label="Bairro:"
+                            variant="standard"
+                            value={bairro}
+                            onChange={(e) => setBairro(e.target.value)} />
+
+                        <TextField
+                            id="numero"
+                            type="number"
+                            label="Número:"
+                            variant="standard"
+                            value={numero}
+                            onChange={(e) => setNumero(e.target.value)} />
+
+                        <FormControl variant="standard" sx={{ minWidth: 120 }}>
+                            <InputLabel>UF:</InputLabel>
+                            <Select
+                                id="UF"
+                                value={UF}
+                                label="Tipo:"
+                                onChange={(e) => setUF(e.target.value)}>
+                                <MenuItem value="">
+                                    <em>Selecionar</em>
+                                </MenuItem>
+                                <MenuItem value="AC">AC</MenuItem>
+                                <MenuItem value="AL">AL</MenuItem>
+                                <MenuItem value="AP">AP</MenuItem>
+                                <MenuItem value="AM">AM</MenuItem>
+                                <MenuItem value="BA">BA</MenuItem>
+                                <MenuItem value="CE">CE</MenuItem>
+                                <MenuItem value="ES">ES</MenuItem>
+                                <MenuItem value="GO">GO</MenuItem>
+                                <MenuItem value="MA">MA</MenuItem>
+                                <MenuItem value="MT">MT</MenuItem>
+                                <MenuItem value="MS">MS</MenuItem>
+                                <MenuItem value="MG">MG</MenuItem>
+                                <MenuItem value="PA">PA</MenuItem>
+                                <MenuItem value="PB">PB</MenuItem>
+                                <MenuItem value="PR">PR</MenuItem>
+                                <MenuItem value="PE">PE</MenuItem>
+                                <MenuItem value="PI">PI</MenuItem>
+                                <MenuItem value="RJ">RJ</MenuItem>
+                                <MenuItem value="RN">RN</MenuItem>
+                                <MenuItem value="RS">RS</MenuItem>
+                                <MenuItem value="RO">RO</MenuItem>
+                                <MenuItem value="RR">RR</MenuItem>
+                                <MenuItem value="SC">SC</MenuItem>
+                                <MenuItem value="SP">SP</MenuItem>
+                                <MenuItem value="SE">SE</MenuItem>
+                                <MenuItem value="TO">TO</MenuItem>
+                                <MenuItem value="DF">DF</MenuItem>
+                            </Select>
+                        </FormControl>
+
+                        <TextField
+                            id="cep"
+                            type="number"
+                            label="CEP:"
+                            variant="standard"
+                            value={cep}
+                            onChange={(e) => setCep(e.target.value)} />
+
+                        <TextField
+                            id="complemento"
+                            label="Complemento:"
+                            variant="standard"
+                            value={complemento}
+                            onChange={(e) => setComplemento(e.target.value)} />
+
+                        <TextField
+                            id="ip_acesso"
+                            label="Ip de Acesso:"
+                            variant="standard"
+                            value={ipAcesso}
+                            onChange={(e) => setIpAcesso(e.target.value)} />
+
+                        <TextField
+                            id="obv"
+                            label="Observação:"
+                            variant="standard"
+                            value={obv}
+                            onChange={(e) => setObv(e.target.value)} />
                     </div>
                 </div>
                 <br />
                 <div className="div" id="infoSistema">
                     <h2>Informações do Sistema</h2>
-                    <div className="divCheckBox">
-                        <label htmlFor="ativo">Ativo</label>
-                        <input type="checkbox" id="ativo" defaultChecked={false} value={ativo} onChange={(e) => setAtivo(e.target.checked ? "Sim" : "Não")} />
-                    </div>
-                    <div className="divSelect">
-                        <label htmlFor="sistema">Sistema</label>
-                        <select style={{ marginLeft: '1em' }} id="sistema" className="sistema" value={sistema} onChange={(e) => setSistema(e.target.value)}>
-                            <option value={"Assistência Social"}>Assistência Social</option>
-                            <option value={"CRM"}>CRM</option>
-                            <option value={"Educação"}>Educação</option>
-                            <option value={"Portal Cidadão"}>Portal Cidadão</option>
-                            <option value={"S-Commerce"}>S-Commerce</option>
-                            <option value={"SADM"}>SADM</option>
-                            <option value={"SAS"}>SAS</option>
-                            <option value={"Saúde"}>Saúde</option>
-                            <option value={"SCA"}>SCA</option>
-                            <option value={"SCA/SAS"}>SCA/SAS</option>
-                            <option value={"SE"}>SE</option>
-                        </select>
-                    </div>
-                    <div className="divNumber">
-                        <label htmlFor="valor">Valor</label>
-                        <input type="number" className="valor" id="valor" value={valor} onChange={(e) => setValor(e.target.value)} />
-                    </div>
-                    <div className="divText">
-                        <label htmlFor="dataInicio">Data de Inicio</label>
-                        <input type="date" className="dataInicio" id="dataInicio" value={dataInicio} onChange={(e) => setDataInicio(e.target.value)} />
-                    </div>
-                    <div className="divText">
-                        <label htmlFor="dataFim">Data de Término</label>
-                        <input type="date" className="dataFim" id="dataFim" value={dataFim} onChange={(e) => setDataFim(e.target.value)} />
+                    <br />
+                    <div className="conteudo">
+
+                        <FormGroup>
+                            <FormControlLabel control={
+                                <Switch
+                                    id="ativo"
+                                    defaultChecked={true}
+                                    value={ativo}
+                                    onChange={(e) => setAtivo(e.target.checked ? "Sim" : "Não")} />}
+                                label="Ativo" />
+                        </FormGroup>
+
+                        <FormControl variant="standard" sx={{ minWidth: 120 }}>
+                            <InputLabel >Sistema:</InputLabel>
+                            <Select
+                                id="sistema"
+                                value={sistema}
+                                label="Sistema:"
+                                onChange={(e) => setSistema(e.target.value)}>
+                                <MenuItem value="">
+                                    <em>Selecionar</em>
+                                </MenuItem>
+                                <MenuItem value={"Assistência Social"}>Assistência Social</MenuItem>
+                                <MenuItem value={"CRM"}>CRM</MenuItem>
+                                <MenuItem value={"Educação"}>Educação</MenuItem>
+                                <MenuItem value={"Portal Cidadão"}>Portal Cidadão</MenuItem>
+                                <MenuItem value={"S-Commerce"}>S-Commerce</MenuItem>
+                                <MenuItem value={"SADM"}>SADM</MenuItem>
+                                <MenuItem value={"SAS"}>SAS</MenuItem>
+                                <MenuItem value={"Saúde"}>Saúde</MenuItem>
+                                <MenuItem value={"SCA"}>SCA</MenuItem>
+                                <MenuItem value={"SCA/SAS"}>SCA/SAS</MenuItem>
+                                <MenuItem value={"SE"}>SE</MenuItem>
+                            </Select>
+                        </FormControl>
+
+                        <TextField
+                            id="valor"
+                            type="number"
+                            label="Valor:"
+                            variant="standard"
+                            value={valor}
+                            onChange={(e) => setValor(e.target.value)} />
+
+                        <TextField
+                            id="dataInicio"
+                            type="date"
+                            label="Data de Início:"
+                            variant="standard"
+                            InputLabelProps={{ shrink: true }}
+                            value={dataInicio}
+                            onChange={(e) => setDataInicio(e.target.value)} />
+
+                        <TextField
+                            id="dataFim"
+                            type="date"
+                            label="Data de Término:"
+                            variant="standard"
+                            InputLabelProps={{ shrink: true }}
+                            value={dataFim}
+                            onChange={(e) => setDataFim(e.target.value)} />
                     </div>
                     <br />
-                    <button type="button" id="editar" style={{ marginRight: '10px' }} className="btn btn-warning" onClick={editarCliente}>Salvar Alterações</button>
-                    <button type="button" id="excluir" style={{ marginRight: '10px' }} className="btn btn-danger" onClick={excluirCliente}>Excluir Informações</button>
+                    <Button id="alterar" variant="contained" color="warning" onClick={editarCliente}> Salvar Alterações</Button>
+                    <Button id="excluir" variant="contained" color="danger" onClick={excluirCliente}> Excluir Informações</Button>
                 </div>
             </form>
         </div>

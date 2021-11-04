@@ -22,7 +22,7 @@ namespace Projeto_Exemplo_2._0.Controllers
         {
             try
             {
-                _Context.Suporte.Add(model);
+                _Context.FeedbackSuporte.Add(model);
                 _Context.SaveChanges();
 
                 return Ok("Suporte Cadastrado com sucesso");

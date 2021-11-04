@@ -15,6 +15,7 @@ namespace Projeto_Exemplo_2._0
         }
         public virtual DbSet<Usuario> Usuarios { get; set; }
         public virtual DbSet<Cliente> Clientes { get; set; }
+        public virtual DbSet<FeedbackSuporte> FeedbackSuporte { get; set; }
         public virtual DbSet<Suporte> Suporte { get; set; }
     }
 }
